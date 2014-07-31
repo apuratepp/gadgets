@@ -1,5 +1,9 @@
-<h1>My Gadgets</h1>
+<h1>My Gadgets (<%= @gadgets.count %>)</h1>
 
+<%= link_to "Add a gadget...", new_gadget_path %>
+
+<ul>
 <% @gadgets.each do |gadget| %>
-	<%= gadget.name %>
+	<li><%= link_to gadget.name, gadget %></li>
 <% end %>
+</ul>

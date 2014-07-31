@@ -1,0 +1,5 @@
+<%= render 'nav' %>
+
+<h1><%= @gadget.name %> detail</h1>
+
+<%= link_to "Edit", edit_gadget_path(@gadget) %> | <%= link_to "Remove", @gadget, method: :delete, data: {confirm: "Are you sure?"} %>
