@@ -8,7 +8,7 @@
 
 <% if @gadgets.empty? %>
   <div class="alert alert-warning" role="alert">
-    Please, add some gadgets first
+    No gadgets
   </div>
 <% else %>
   <%= render @view_params, locals: {gadgets: @gadgets} %>
