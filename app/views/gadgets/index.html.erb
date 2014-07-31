@@ -1,3 +1,5 @@
+<%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+
 <h1>My Gadgets (<%= @gadgets.count %>)</h1>
 
 <%= link_to "Add a gadget...", new_gadget_path %>
