@@ -1,0 +1,11 @@
+<h4>List View / <%= link_to "Cover Flow", view_params: 'cover_flow' %></h4>
+
+<div class="list-group">
+<% @gadgets.each do |gadget| %>
+	<% if gadget.pictures.empty? %>
+		<%= link_to gadget.name, gadget, class: 'list-group-item' %>
+	<% else %>
+		<%= link_to image_tag(gadget.pictures.first.image.url(:thumb)), gadget, class: 'list-group-item' %>
+	<% end %>
+<% end %>
+</div>

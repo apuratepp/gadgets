@@ -6,8 +6,9 @@
 	</ul>
 <% end %>
 
+<div class="col-md-6">
 <%= form_for(@gadget) do |f| %>
-	<p><%= f.text_field :name, placeholder: "Gadget Name" %></p>
-	<p><%= f.submit %></p>
+	<p><%= f.text_field :name, placeholder: "Gadget Name", class: 'form-control' %></p>
+	<p><%= f.submit "Save", class: 'btn btn-default' %></p>
 <% end %>
-
+</div>

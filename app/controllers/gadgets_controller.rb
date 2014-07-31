@@ -1,5 +1,6 @@
 class GadgetsController < ApplicationController
 	def index
+		@view_params = view_params
 		if search?
 			@gadgets = current_user.gadgets.where("name like ?", search_params).includes(:pictures)
 		else
@@ -49,5 +50,8 @@ class GadgetsController < ApplicationController
 	end
 	def search?
 		!search_params.blank?
+	end
+	def view_params
+		params[:view_params] || 'list'
 	end
 end

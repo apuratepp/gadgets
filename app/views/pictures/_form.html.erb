@@ -8,6 +8,6 @@
 
 <%= form_for([@picture.gadget, @picture]) do |f| %>
 	<p><%= f.file_field :image %></p>
-	<p><%= f.submit %></p>
+	<p><%= f.submit "Upload", class: 'btn btn-default' %></p>
 <% end %>
 
