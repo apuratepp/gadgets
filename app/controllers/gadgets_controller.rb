@@ -1,6 +1,10 @@
 class GadgetsController < ApplicationController
 	def index
-		@gadgets = current_user.gadgets.includes(:pictures)
+		if search?
+			@gadgets = current_user.gadgets.where("name like ?", search_params).includes(:pictures)
+		else
+			@gadgets = current_user.gadgets.includes(:pictures)
+		end
 	end
 	def new
 		@gadget = current_user.gadgets.new
@@ -39,5 +43,11 @@ class GadgetsController < ApplicationController
 	private
 	def gadget_params
 		params.require(:gadget).permit(:name)
+	end
+	def search_params
+		params[:seach]
+	end
+	def search?
+		!search_params.blank?
 	end
 end

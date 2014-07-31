@@ -11,6 +11,7 @@ class PicturesController < ApplicationController
 		end
 	end
 	def show
+		@size = size_params
 		@picture = current_gadget.pictures.find(params[:id])
 	end
 	def destroy
@@ -25,5 +26,8 @@ class PicturesController < ApplicationController
 	end
 	def current_gadget
 		current_user.gadgets.find(params[:gadget_id])
+	end
+	def size_params
+		params[:size] || :medium
 	end
 end

@@ -2,7 +2,11 @@
 
 <h1><%= @picture.gadget.name %> picture</h1>
 
-<%= image_tag @picture.image, height: "640" %>
+<%= render 'size' %>
+
+<br />
+
+<%= image_tag @picture.image.url(@size) %>
 
 <br />
 
