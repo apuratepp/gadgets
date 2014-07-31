@@ -1,0 +1,13 @@
+<% if @picture.errors %>
+	<ul>
+	<% @picture.errors.full_messages.each do |message| %>
+		<li><%= message %>
+	<% end %>
+	</ul>
+<% end %>
+
+<%= form_for([@picture.gadget, @picture]) do |f| %>
+	<p><%= f.file_field :image %></p>
+	<p><%= f.submit %></p>
+<% end %>
+

@@ -1,0 +1,9 @@
+<%= render 'nav' %>
+
+<h1><%= @picture.gadget.name %> picture</h1>
+
+<%= image_tag @picture.image, height: "640" %>
+
+<br />
+
+<%= link_to "Remove", [@picture.gadget, @picture], method: :delete, data: {confirm: "Are you sure you want to delete this picture?"} %>
